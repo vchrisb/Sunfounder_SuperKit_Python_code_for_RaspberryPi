@@ -22,7 +22,7 @@ def swLed(ev=None):
 		print '...led on'
 
 def loop():
-	GPIO.add_event_detect(BtnPin, GPIO.FALLING, callback=swLed) # wait for falling
+	GPIO.add_event_detect(BtnPin, GPIO.FALLING, callback=swLed, bouncetime=200) # wait for falling
 	while True:
 		pass   # Don't do anything
 

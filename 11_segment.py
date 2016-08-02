@@ -38,6 +38,7 @@ def loop():
 			time.sleep(0.5)
 
 def destroy():   #When program ending, the function is executed. 
+	hc595_shift(0x0)	
 	GPIO.cleanup()
 
 if __name__ == '__main__': #Program starting from here 

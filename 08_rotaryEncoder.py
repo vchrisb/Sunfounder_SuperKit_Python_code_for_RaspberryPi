@@ -38,12 +38,13 @@ def rotaryDeal():
 			print 'globalCounter = %d' % globalCounter
 
 def clear(ev=None):
-        globalCounter = 0
+	global globalCounter
+	globalCounter = 0
 	print 'globalCounter = %d' % globalCounter
 	time.sleep(1)
 
 def rotaryClear():
-        GPIO.add_event_detect(RoSPin, GPIO.FALLING, callback=clear) # wait for falling
+        GPIO.add_event_detect(RoSPin, GPIO.FALLING, callback=clear, bouncetime=200) # wait for falling
 
 
 def loop():
